@@ -16,6 +16,12 @@ export default function Page() {
       <View style={styles.header}>
         <View>
           <Text style={styles.title}>My model S</Text>
+          <FontAwesome
+            name="battery-4"
+            size={24}
+            color="green"
+            style={{ marginBottom: 5 }}
+          />
           <Text style={styles.subtitle}>Parked</Text>
         </View>
         <FontAwesome name="user-circle" size={30} color="gray" />
