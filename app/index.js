@@ -1,15 +1,14 @@
+// UTILITIES
 import { StyleSheet, Text, View, Image, FlatList } from "react-native";
-import {
-  FontAwesome,
-  Entypo,
-  MaterialCommunityIcons,
-  MaterialIcons,
-  FontAwesome5,
-  Ionicons,
-} from "@expo/vector-icons";
-import car from "../assets/images/car.png";
+
+// ICON
+import { FontAwesome } from "@expo/vector-icons";
+
+// COMPONENT
 import menuOptions from "../assets/menuOptions";
 import MenuOption from "../component/MenuOption";
+import Controls from "../component/Controls";
+import car from "../assets/images/car.png";
 
 export default function Page() {
   return (
@@ -21,20 +20,15 @@ export default function Page() {
         </View>
         <FontAwesome name="user-circle" size={30} color="gray" />
       </View>
-
       <Image source={car} style={styles.image} resizeMode="contain" />
 
-      <View style={styles.controls}>
-        <Entypo name="lock" size={26} color="gray" />
-        <MaterialCommunityIcons name="fan" size={26} color="gray" />
-        <FontAwesome5 name="bolt" size={26} color="gray" />
-        <Ionicons name="car-sport-sharp" size={26} color="gray" />
-      </View>
+      {/* <Controls /> */}
 
       <FlatList
         data={menuOptions}
         showsVerticalScrollIndicator={false}
         renderItem={MenuOption}
+        ListHeaderComponent={Controls}
       />
     </View>
   );
